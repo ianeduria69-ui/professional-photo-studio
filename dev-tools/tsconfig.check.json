@@ -1,0 +1,9 @@
+{
+  "extends": "/home/claude/professional-photo-studio/tsconfig.json",
+  "compilerOptions": {
+    "ignoreDeprecations": "6.0",
+    "typeRoots": ["/home/claude/professional-photo-studio/node_modules/@types"],
+    "types": ["node"]
+  },
+  "include": ["/home/claude/professional-photo-studio/src", "/home/claude/professional-photo-studio/tests", "/tmp/claude-0/-home-claude/52139727-53ca-519e-8939-7b375d4f3dbb/scratchpad/shim/react.d.ts"]
+}

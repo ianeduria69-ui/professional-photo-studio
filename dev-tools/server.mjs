@@ -1,0 +1,3 @@
+import http from 'node:http'; import fs from 'node:fs'; import path from 'node:path';
+const D='/tmp/claude-0/-home-claude/52139727-53ca-519e-8939-7b375d4f3dbb/scratchpad/dist'; const T={'.html':'text/html','.js':'text/javascript','.ts':'text/javascript','.css':'text/css'};
+http.createServer((q,r)=>{ let p=q.url.split('?')[0]; if(p==='/')p='/index.html'; const f=path.join(D,p); if(!f.startsWith(D)||!fs.existsSync(f)){r.writeHead(404);r.end();return;} r.writeHead(200,{'content-type':T[path.extname(f)]||'application/octet-stream'}); fs.createReadStream(f).pipe(r);}).listen(5199,()=>console.log('up'));
