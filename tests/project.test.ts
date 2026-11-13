@@ -221,7 +221,7 @@ test('every built-in template builds a valid, serialisable document of the right
     assert.equal(back.layers.length, doc.layers.length, t.id);
     assert.equal(back.width, doc.width);
   }
-  const id = builtinById('id-card')!.build();P
+  const id = builtinById('id-card')!.build();
 
   assert.deepEqual([id.width, id.height, id.dpi], [1013, 638, 300]); // 3.375 x 2.125 in
   const bc = builtinById('business-card')!.build();

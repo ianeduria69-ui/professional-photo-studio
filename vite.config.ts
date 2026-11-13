@@ -1,3 +1,4 @@
+
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { existsSync } from 'node:fs';
@@ -11,9 +12,12 @@ const root = path.dirname(fileURLToPath(import.meta.url));
  * installed, alias it to a small stub that throws a clear "not installed"
  * error at runtime, so the rest of the app still builds and runs.
  */
-const imglyInstalled = existsSync(path.join(root, 'node_modules', '@imgly', 'background-removal', 'package.json'));
+const imglyInstalled = existsSync(
+  path.join(root, 'node_modules', '@imgly', 'background-removal', 'package.json')
+);
 
 export default defineConfig({
+  base: '/professional-photo-studio/',
   plugins: [react()],
   resolve: {
     alias: imglyInstalled
